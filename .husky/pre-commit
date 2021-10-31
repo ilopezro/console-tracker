@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Initiating Checks\n"
+echo "Checking Linter"
+yarn lint-staged
+
+echo "\nChecking Typescript"
+yarn check:ts
