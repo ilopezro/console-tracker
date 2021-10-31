@@ -1,0 +1,42 @@
+name: console-tracker
+
+on:
+  push:
+    branches: [main, prod]
+  pull_request:
+    branches: [main, prod, feature/**, chore/**]
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.17.0
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Lint Typescript
+        run: yarn lint:ts
+      - name: Check Typescript
+        run: yarn check:ts
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [static-analysis]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.17.0
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Create Production Build
+        run: yarn build
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
