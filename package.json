@@ -28,7 +28,9 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "check:ts": "tsc --noEmit",
-    "lint:ts": "eslint 'src/**/*.{js, jsx, ts,tsx}'"
+    "lint:ts": "eslint 'src/**/*.{js, jsx, ts,tsx}'",
+    "deploy:staging": "firebase deploy --only hosting:staging",
+    "deploy:production": "firebase deploy --only hosting:production"
   },
   "browserslist": {
     "production": [
@@ -53,6 +55,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "firebase-tools": "^9.21.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "micromatch": "^4.0.4",
