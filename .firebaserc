@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "console-tracker"
+  },
+  "targets": {
+    "console-tracker": {
+      "hosting": {
+        "staging": [
+          "console-tracker-staging"
+        ],
+        "production": [
+          "console-tracker"
+        ]
+      }
+    }
+  }
+}
