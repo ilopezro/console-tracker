@@ -21,6 +21,8 @@ jobs:
         run: yarn lint:ts
       - name: Check Typescript
         run: yarn check:ts
+      - name: Check SCSS
+        run: yarn lint:css
 
   build:
     runs-on: ubuntu-latest
