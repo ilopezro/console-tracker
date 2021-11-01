@@ -1,5 +1,4 @@
 import logo from "./logo.svg"
-import "./App.scss"
 import "i18n/config"
 import { FC } from "react"
 import { useTranslation } from "react-i18next"
