@@ -56,7 +56,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "firebase-tools": "^9.21.0",
+    "firebase-tools": "^9.22.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "micromatch": "^4.0.4",
